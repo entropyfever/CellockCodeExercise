@@ -1,91 +1,107 @@
-# CodeExercise
+# Cellock Coding Exercise
+
+The goal of these exercises are to assess your proficiency in software engineering that is related to the daily work that we do at Cellock. Please follow the instructions below to complete the assessment.
+
+## Setup
+
+1. Create a new repository in your own git profile  and commit the contents of this folder
+2. Ensure `node (>8.6 and <= 10)` and `npm` are installed
+3. Run `npm install`
+4. Run `npm test`
+5. Run `npm start`
+6. Hit the server to test health `curl localhost:8010/health` and expect a `200` response 
+
+## Tasks
+
+Below will be your set of tasks to accomplish. Please work on each of these tasks in order. Success criteria will be defined clearly for each task
+
+1. [Documentation](#documentation)
+2. [Implement Pagination](#implement-pagination)
+3. [Refactoring](#refactoring)
+4. [Security](#security)
+5. [UI Creation](#ui-creation)
+
+### 1.Documentation
+
+Please deliver documentation of the server that clearly explains the goals of this project and clarifies the API response that is expected.
+
+#### Success Criteria
+
+1. A pull request against `master` of your fork with a clear description of the change and purpose and merge it
+3. **[BONUS]** Create an easy way to deploy and view the documentation in a web format and include instructions to do so  
 
 
+### 2.Implement Pagination
 
-## Getting started
+Please implement pagination to retrieve pages of the resource `rides`.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+1. Create a pull request against `master` with your changes to the `GET /rides` endpoint to support pagination including:
+    1. Code changes
+    2. Tests
+    3. Documentation
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+#### Success Criteria
 
-## Add your files
+1. A pull request against `master` of your fork with :
+    1. Code changes
+    2. Tests
 
-- [ ] [Create](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### 3.Refactoring
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/CellockLab/CodeExercise.git
-git branch -M main
-git push -uf origin main
-```
+Please implement the following refactors of the code:
 
-## Integrate with your tools
+1. Convert callback style code to use `async/await`
+2. Reduce complexity at top level control flow logic and move logic down and test independently
+3. **[BONUS]** Split between functional and imperative function and test independently
+4. **[BONUS]** Add Typescript support
 
-- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/user/project/integrations/)
+#### Success Criteria
 
-## Collaborate with your team
+1. A pull request against `master` of your fork for each of the refactors above with:
+    1. Code changes
+    2. Tests
 
-- [ ] [Invite team members and collaborators](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Automatically merge when pipeline succeeds](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### 4.Security
 
-## Test and Deploy
+Please implement the following security controls for your system:
 
-Use the built-in continuous integration in GitLab.
+1. Ensure the system is not vulnerable to [SQL injection](https://www.owasp.org/index.php/SQL_Injection)
+2. **[BONUS]** Implement an additional security improvement of your choice
 
-- [ ] [Get started with GitLab CI/CD](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://docs.gitlab.com/ee/user/clusters/agent/)
+#### Success Criteria
 
-***
+1. A pull request against `master` of your fork with:
+    1. Changes to the code
+    2. Tests ensuring the vulnerability is addressed
 
-# Editing this README
+### 5.UI Creation 
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://gitlab.com/-/experiment/new_project_readme_content:c54edb73ab318c5702eb8a9c890f3016?https://www.makeareadme.com/) for this template.
+Please implement basic UI for displaying a list of rides 
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
 
-## Name
-Choose a self-explaining name for your project.
+#### Success Criteria
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+1. Implement a simple User interface for displaying and updating the 'rides' in React/Vuew/Anjular 
+    1. Add a list to display all 'rides'
+    2. Add insert new functionality
+    3. Add Update Functionality 
+    4. Add view functionality
+    5.**[BONUS]** Add a seperate client page called /map to display the rides in a map 
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+#### Deliverable
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+A link to your git account with access to all commits you make for the final deliverable 
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+#### Duration 
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Duration of the project should not be more than one day . 
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+#### Scoring
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+You will be scored based on the deliverable for each one of the tasks . You can deliver  one or all tasks based on your experience and you will be scored accordingly .
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+GOOD LUCK
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
 
