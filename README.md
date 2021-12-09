@@ -2,7 +2,7 @@
 
 The goal of these exercises are to assess your proficiency in software engineering that is related to the daily work that we do at Cellock. Please follow the instructions below to complete the assessment.
 
-## Setup
+## Setup.
 
 1. Create a new repository in your own git profile  and commit the contents of this folder
 2. Ensure `node (>8.6 and <= 10)` and `npm` are installed
