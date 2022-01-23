@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+const fetch = require('node-fetch');
 
 function randomInteger(min, max) {
   return Math.floor( Math.random() * (max - min) + min );
