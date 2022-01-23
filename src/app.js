@@ -77,7 +77,12 @@ module.exports = (db) => {
     });
 
     app.get('/rides', (req, res) => {
-        db.all('SELECT * FROM Rides', function (err, rows) {
+
+        const page = parseInt(req.query.page, 10);
+        const limit = parseInt(req.query.limit, 10);
+        const skip = (page - 1) * limit;
+
+        db.all(`SELECT * FROM Rides LIMIT ${limit} OFFSET ${skip}`, function (err, rows) {
             if (err) {
                 return res.send({
                     error_code: 'SERVER_ERROR',
