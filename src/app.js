@@ -6,6 +6,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
+const blueprints  = require('./blueprints');
+const sanitizeRequest = require('./middlewares/sanitize-request');
+
 module.exports = (db) => {
     app.get('/health', (req, res) => res.send('Healthy'));
 
@@ -76,10 +79,15 @@ module.exports = (db) => {
         });
     });
 
-    app.get('/rides', (req, res) => {
+    app.get('/rides', sanitizeRequest(blueprints.rides.getRides),
 
-        const page = parseInt(req.query.page, 10);
-        const limit = parseInt(req.query.limit, 10);
+      (req, res) => {
+
+        const {
+            page,
+            limit,
+        } = req.query;
+
         const skip = (page - 1) * limit;
 
         db.all(`SELECT * FROM Rides LIMIT ${limit} OFFSET ${skip}`, function (err, rows) {
