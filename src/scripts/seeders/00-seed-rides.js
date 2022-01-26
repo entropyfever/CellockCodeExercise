@@ -160,7 +160,7 @@ async function postRide(ride){
 }
 
 async function main(){
-  return await Promise.all(createRides(300).map(postRide))
+  return await Promise.all(createRides(1).map(postRide))
 }
 
 
